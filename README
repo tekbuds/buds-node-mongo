@@ -1,0 +1,13 @@
+sacx-cnt-1:~/buds/buds-node-mongo # cnf docker-compose
+
+The program 'docker-compose' can be found in the following package:
+  * python3-docker-compose [ path: /usr/bin/docker-compose, repository: zypp (CommonOS-Leap-oss) ]
+
+Try installing with:
+    zypper install python3-docker-compose
+
+sacx-cnt-1:~/buds/buds-node-mongo #  zypper install python3-docker-compose
+
+
+docker-compose -f docker-compose.yml up
+docker-compose -f docker-compose.yml down
