@@ -10,4 +10,10 @@ sacx-cnt-1:~/buds/buds-node-mongo #  zypper install python3-docker-compose
 
 
 docker-compose -f docker-compose.yml up
+
+this should print -
+
+MongoDB Connected
+
+
 docker-compose -f docker-compose.yml down
