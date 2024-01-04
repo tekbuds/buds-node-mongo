@@ -1,15 +1,23 @@
-version: "3"
+version: '2'
 services:
   app:
     build:
-      context: ./app1
+      context: ./s1
     volumes:
-      - ./app1:/usr/src/app
+      - ./s1:/usr/src/app
       - node_modules:/usr/src/app/node_modules
     ports:
-     - 3000:3000
-     - 9229:9229
-
+      - 3000:3000
+      - 9229:9229
+  app2:
+    build:
+      context: ./s2
+    volumes:
+      - ./s2:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
+    ports:
+      - 3001:3001
+    mem_limit: 128M
   mongo:
     container_name: mongo
     image: mongo
