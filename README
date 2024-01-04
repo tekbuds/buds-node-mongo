@@ -17,3 +17,7 @@ MongoDB Connected
 
 
 docker-compose -f docker-compose.yml down
+
+see usage details:
+
+docker stats
