@@ -1,18 +1,31 @@
 version: "3"
 services:
   app:
-    container_name: app
-    image: dockerfile
-    restart: always
-    build: .
+    build:
+      context: ./app1
+    volumes:
+      - ./app1:/usr/src/app
+      - node_modules:/usr/src/app/node_modules
     ports:
-      - "3000:3000"
-    links:
-      - mongo
+     - 3000:3000
+     - 9229:9229
+
   mongo:
     container_name: mongo
     image: mongo
     volumes:
-    - ./data:/data/db
+     - mongodb:/data/db
+     - mongodb_config:/data/configdb
     ports:
-    - "27017:27017"
+     - 27017:27017
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8082:8081
+    environment:
+      ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
+volumes:
+ mongodb:
+ mongodb_config:
+ node_modules:
